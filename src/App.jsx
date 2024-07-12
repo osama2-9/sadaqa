@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Prayer from './components/Prayer'
 import QuranPlayer from './components/QuranPlayer'
 import Sobha from './components/Sobha'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Sobha />
       <Prayer />
       <Footer />
+      <Analytics />
 
     </>
   )
