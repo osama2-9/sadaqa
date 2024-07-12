@@ -1,0 +1,15 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+* {
+    box-sizing: border-box;
+}
+
+html[lang="ar"],
+body[lang="ar"] {
+    font-family: 'Droid Arabic Kufi', serif;
+}
+
+html[lang="en"],
+body[lang="en"] {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
