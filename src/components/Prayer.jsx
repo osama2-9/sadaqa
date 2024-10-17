@@ -1,9 +1,7 @@
-import { Box, Flex, Text, Heading, useMediaQuery, Link } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Prayer = () => {
     const [selectedPrayer, setSelectedPrayer] = useState(null);
-    const [isSmallerThanMd] = useMediaQuery("(max-width: 48em)");
 
     const handleTranslate = (index) => {
         setSelectedPrayer((prev) => (prev === index ? null : index));
@@ -37,31 +35,27 @@ const Prayer = () => {
     ];
 
     return (
-        <Box color={"black"} mt={10} p={5}>
-            <Heading mb={10} textAlign="center">
-                Prayers
-            </Heading>
-            <Flex id="Prayer" direction={isSmallerThanMd ? "column" : "row"} wrap="wrap" justify="space-between">
+        <div className="mb-10 text-black mt-10 px-5">
+            <h1 className="text-center text-3xl font-bold mb-10">Prayers</h1>
+            <div className="flex flex-wrap justify-between" id="Prayer">
                 {prayers.map((prayer, index) => (
-                    <Box
+                    <div
                         key={index}
-                        p={5}
-                        shadow="md"
-                        borderWidth="1px"
-                        borderRadius="lg"
-                        mb={6}
-                        width={isSmallerThanMd ? "100%" : "45%"}
+                        className="p-5 shadow-md border border-gray-200 rounded-lg mb-6 w-full md:w-[45%]"
                     >
-                        <Text fontSize="xl" fontWeight="bold" mb={4}>
+                        <p className="text-xl font-bold mb-4">
                             {selectedPrayer === index ? prayer.english : prayer.arabic}
-                        </Text>
-                        <Link as={Link} onClick={() => handleTranslate(index)} colorScheme="blue">
+                        </p>
+                        <button
+                            onClick={() => handleTranslate(index)}
+                            className="text-blue-600 hover:underline"
+                        >
                             {selectedPrayer === index ? "Show Arabic" : "Translate to English"}
-                        </Link>
-                    </Box>
+                        </button>
+                    </div>
                 ))}
-            </Flex>
-        </Box>
+            </div>
+        </div>
     );
 };
 

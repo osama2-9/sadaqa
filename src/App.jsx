@@ -1,4 +1,5 @@
 import './App.css'
+import { Adhan } from './components/Adhan'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -16,6 +17,7 @@ function App() {
       <QuranPlayer />
       <Sobha />
       <Prayer />
+      <Adhan/>
       <Footer />
       <Analytics />
 

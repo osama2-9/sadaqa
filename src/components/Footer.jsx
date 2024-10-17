@@ -31,8 +31,8 @@ const Footer = () => {
 
                 <Modal isOpen={isOpen} onClose={closeModal}>
                     <ModalOverlay />
-                    <ModalContent>
-                        <ModalHeader>How to Save on your phone</ModalHeader>
+                    <ModalContent bg={'white'}>
+                        <ModalHeader color={'black'}>How to Save on your phone</ModalHeader>
                         <ModalCloseButton />
                         <ModalBody bg={'gray.50'}>
                             {steps.map((step, index) => (
@@ -43,11 +43,11 @@ const Footer = () => {
                             ))}
                         </ModalBody>
 
-                        <ModalFooter>
+                        <ModalFooter bg={'white'}>
                             <Button colorScheme='blue' mr={3} onClick={closeModal}>
                                 Close
                             </Button>
-                        </ModalFooter>
+                        </ModalFooter >
                     </ModalContent>
                 </Modal>
             </Flex>
