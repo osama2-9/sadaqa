@@ -30,7 +30,6 @@ export const Adhan = () => {
             const data = await response.json();
             if(data){
 
-                alert(JSON.stringify(data.data))
                 setPrayerTimes(data.data.timings);
                 setNextPrayerTime(data.data.timings);
             }
@@ -38,7 +37,7 @@ export const Adhan = () => {
                 setError('Could not fetch prayer times');
             }
         } catch (err) {
-            console.error('Fetch error:', err);  // Log the error
+            console.error('Fetch error:', err);  
             setError('Error fetching prayer times');
         } finally {
             setLoading(false);
