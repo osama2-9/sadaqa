@@ -28,10 +28,13 @@ export const Adhan = () => {
             }
 
             const data = await response.json();
-            if (data.code === 200) {
+            if(data){
+
+                alert(JSON.stringify(data.data))
                 setPrayerTimes(data.data.timings);
                 setNextPrayerTime(data.data.timings);
-            } else {
+            }
+             else {
                 setError('Could not fetch prayer times');
             }
         } catch (err) {
